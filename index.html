@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.2.2/echarts.min.js"></script>
+</head>
+<div class="box">
+    <div class="bux">
+        <div class="box1">
+            <h3>待办事项</h3>
+            <div class="daiban">
+                <h3>待发货订单</h3>
+                <p>单位(笔)</p>
+                <h1>0</h1>
+            </div>
+            <div class="daiban">
+                <h3>待处理售后</h3>
+                <p>单位(笔)</p>
+                <h1 style="color: red;">0</h1>
+            </div>
+            <div class="daiban">
+                <h3>待付款订单</h3>
+                <p>单位(笔)</p>
+                <h1 style="color: rgb(0, 255, 17);">109</h1>
+            </div>
+            <div class="daiban">
+                <h3>待补货商品</h3>
+                <p>单位(个)</p>
+                <h1 style="color: rgb(96, 96, 255);">0</h1>
+            </div>
+            <div class="daiban">
+                <h3>待审核会员</h3>
+                <p>单位(个)</p>
+                <h1 style="color: orange;">0</h1>
+            </div>
+            <div class="daiban">
+                <h3>待审核佣金</h3>
+                <p>单位(元)</p>
+                <h1 style="color: rgb(74, 255, 195);">0.00</h1>
+            </div>
+        </div>
+        <div class="box2">
+            <div class="left">
+                <h2>新增会员
+                    <div class="riqi">近30日</div>
+                    <div class="riqi">近7日</div>
+                    <div class="riqi">昨天</div>
+                    <div class="riqi">今天</div>
+                </h2>
+                <div class="left1" id="asd"></div>
+            </div>
+            <div class="right">
+                <h2>新增订单
+                    <div class="you">
+                        <div class="shijian">近30日</div>
+                        <div class="shijian">近7日</div>
+                        <div class="shijian">昨天</div>
+                        <div class="shijian">今天</div>
+                    </div>
+                </h2>
+                <div class="right1" id="zhuzhuang"></div>
+            </div>
+        </div>
+        <div class="box3">
+            <h2>运营数据<button style="font-size: 20px; border-radius: 50px;margin: 5px; width: 25px;
+            height: 25px;color: gray;"><b>?</b></button></h2>
+            <div class="youbian">
+                <div class="shijian">近30日</div>
+                <div class="shijian">近7日</div>
+                <div class="shijian">昨天</div>
+                <div class="shijian">今天</div>
+                <input type="date" id="dateInput" name="date">
+                <input type="date" id="dateInput" name="date">
+            </div>
+            <div class="he">
+                <div class="he1">
+                    <div class="touduo">
+                        <h3>成交金额(元)</h3>
+                        <h1>4218.1</h1>
+                        <p>较昨日&emsp;<span
+                                style="color: rgb(0, 255, 17);background-color:rgb(241, 255, 219);border-radius: 5px;">▼-100%</span>
+                        </p>
+                    </div>
+                    <div class="touduo">
+                        <h3>退款金额(元)</h3>
+                        <h1>455</h1>
+                        <p>较昨日&emsp;<span
+                                style="color: rgb(255, 96, 68);background-color:rgb(255, 233, 227);border-radius: 5px;">▲-100%</span>
+                        </p>
+                    </div>
+                    <div class="touduo">
+                        <h3>支付订单(笔)</h3>
+                        <h1>32</h1>
+                        <p>较昨日&emsp;<span
+                                style="color: rgb(0, 255, 17);background-color:rgb(241, 255, 219);border-radius: 5px;">▼-100%</span>
+                        </p>
+                    </div>
+                    <div class="touduo">
+                        <h3>支付人数(人)</h3>
+                        <h1>27</h1>
+                        <p>较昨日&emsp;<span
+                                style="color: rgb(255, 96, 68);background-color:rgb(255, 233, 227);border-radius: 5px;">▲0%</span>
+                        </p>
+                    </div>
+                    <div class="touduo">
+                        <h3>客单价(元)</h3>
+                        <h1>156.22</h1>
+                        <p>较昨日&emsp;<span
+                                style="color: rgb(0, 255, 17);background-color:rgb(241, 255, 219);border-radius: 5px;">▼-100%</span>
+                        </p>
+                    </div>
+                    <div class="touduo">
+                        <h3>笔单价(元)</h3>
+                        <h1>131.81</h1>
+                        <p>较昨日&emsp;<span
+                                style="color: rgb(0, 255, 17);background-color:rgb(241, 255, 219);border-radius: 5px;">▼-100%</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="he2" id="boxian"></div>
+            </div>
+        </div>
+        <div class="box4">
+            <div class="fenxiao">
+                <h2>新增分销订单</h2>
+                <div class="youbian">
+                    <div class="shijian">近30日</div>
+                    <div class="shijian">近7日</div>
+                    <div class="shijian">昨天</div>
+                    <div class="shijian">今天</div>
+                </div>
+                <div class="lun" id="fenx"></div>
+            </div>
+            <div class="fenxiao">
+                <h2>新增分销商</h2>
+                <div class="youbian">
+                    <div class="shijian">近30日</div>
+                    <div class="shijian">近7日</div>
+                    <div class="shijian">昨天</div>
+                    <div class="shijian">今天</div>
+                </div>
+                <div class="lun" id="bings"></div>
+            </div>
+        </div>
+        <div class="box5">
+            <h2>浏览量分析</h2>
+            <div class="youbian">
+                <div class="shijian">近30日</div>
+                <div class="shijian">近7日</div>
+                <div class="shijian">昨天</div>
+                <div class="shijian">今天</div>
+            </div>
+            <div class="leftbox">
+                <div class="moshe">
+                    <h2><p class="pp19"></p>PV(总浏览量)</h1><br>
+                        <h2>113</h1>
+                </div>
+                <div class="moshe">
+                    <h2><p class="mi3"></p>UV(总浏览量)</h1><br>
+                        <h2>0</h1>
+                </div>
+            </div>
+            <div class="rightbox" id="lll"></div>
+        </div>
+        <div class="box6">
+            <div class="yhshangp">
+                <h2>商品排行</h2>
+                <div class="youbian">
+                    <div class="shijian">近30日</div>
+                    <div class="shijian">近7日</div>
+                    <div class="shijian">昨天</div>
+                    <div class="shijian">今天</div>
+                </div>
+                <div class="shangp"></div>
+            </div>
+            <div class="yhshangp">
+                <h2>会员排行</h2>
+                <div class="youbian">
+                    <div class="shijian">近30日</div>
+                    <div class="shijian">近7日</div>
+                    <div class="shijian">昨天</div>
+                    <div class="shijian">今天</div>
+                </div>
+                <div class="shangp"></div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<body>
+    <script src="./lunbo.js"></script>
+    <script src="./zhexian.js"></script>
+    <script src="./buoxian.js"></script>
+    <script src="./fenxiao.js"></script>
+    <script src="./bing.js"></script>
+    <script src="./liulanli.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>
