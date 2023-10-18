@@ -37,5 +37,4 @@ app.get("/deleteCar",(req,res,next) => {
     res.send(response)
   })
 })
-
 module.exports = app
